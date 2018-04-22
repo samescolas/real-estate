@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+
+import Config from './config';
+
 import Title from './components/Title';
 import Gallery from './components/Gallery';
 import Map from './components/Map';
@@ -25,7 +28,7 @@ class App extends Component {
 		`;
     return (
       <div className="App">
-				<Title />
+				<Title address={Config.address} city={Config.city} state={Config.state} />
 				<TopContainer>
 					<Gallery />
 					<FeatureList />
