@@ -1,18 +1,45 @@
 import React, { Component } from 'react';
-import { Carousel, DatePicker } from 'antd';
-import 'antd/lib/carousel/style/css';        // for css
-import 'antd/lib/date-picker/style/css';        // for css
+import styled from 'styled-components';
+import Title from './components/Title';
+import Gallery from './components/Gallery';
+import Map from './components/Map';
+import TagList from './components/TagList';
+import FeatureList from './components/FeatureList';
+
+//import { Carousel, DatePicker } from 'antd';
+//import 'antd/lib/carousel/style/css';        // for css
+//import 'antd/lib/date-picker/style/css';        // for css
 
 import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
-	onChange = () => {
-		console.log("Change!");
-	}
+
   render() {
+		const TopContainer = styled.div`
+			width: 100%;
+			height: 80vh;
+			background-color: inidianred;
+			display: flex;
+			flex-direction: row;
+		`;
     return (
       <div className="App">
+				<Title />
+				<TopContainer>
+					<Gallery />
+					<FeatureList />
+				</TopContainer>
+				<Map />
+				<TagList />
+      </div>
+    );
+  }
+}
+
+export default App;
+
+/* Saving example for later
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
@@ -31,9 +58,4 @@ class App extends Component {
 				<div style={{ width: '25%' }}>
 					<DatePicker />
 				</div>
-      </div>
-    );
-  }
-}
-
-export default App;
+*/
