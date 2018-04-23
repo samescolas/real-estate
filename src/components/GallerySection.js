@@ -10,6 +10,7 @@ class GallerySection extends Component {
 		super(props);
 		this.state = {
 			activeImage: 0,
+			tags: props.images.map(i => i.categories).reduce((i, acc) => [...acc, ...i]).sort().filter((v, i, a) => (i===0 || v!==a[i-1]))
 		};
 	}
 
@@ -39,7 +40,7 @@ class GallerySection extends Component {
 			<TopContainer>
 				<Gallery images={images} onCarouselChange={this.onChange} activeImage={this.state.activeImage} />
 				<Details>
-					<TagList tags={images[this.state.activeImage].categories} />
+					<TagList tags={this.state.tags} activeTags={images[this.state.activeImage].categories} />
 					<FeatureList features={features} />
 				</Details>
 			</TopContainer>

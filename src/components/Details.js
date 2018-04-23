@@ -22,7 +22,7 @@ const Details = ({ details }) => {
 		font-family: 'Raleway', sans-seif;
 	`;
 	const renderDetails = () => {
-		return details.map(d => <DetailContainer>{d}</DetailContainer>);
+		return details.map((d, i) => <DetailContainer key={i}>{d}</DetailContainer>);
 	};
 
 	return (
