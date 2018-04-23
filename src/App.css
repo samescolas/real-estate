@@ -22,17 +22,16 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
 /* Carousel */
 .ant-carousel .slick-slide {
   text-align: center;
   height: 80vh;
   line-height: 160px;
   overflow: hidden;
+}
+
+.ant-carousel .slick-slide button {
+	height: 200px;
 }
 
 .ant-carousel .slick-slide h3 {

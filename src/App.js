@@ -19,6 +19,7 @@ const App = () => {
 			<Details details={Config.details} />
 			<div style={{ paddingTop: '20px' }}>
 				{/*
+					commented out so I don't request resource too many times testing
 				<Map center={Config.center} zoom={Config.zoom} />
 				*/}
 			</div>
