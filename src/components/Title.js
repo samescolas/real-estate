@@ -16,6 +16,7 @@ const Title = ({ address, city, state }) => {
 		flex-direction: row;
 		align-items: center;
 		justify-content: space-around;
+		z-index: 2;
 		box-shadow: 0px 0px 2px #333;
 	`;
 	const Address = styled.h1`

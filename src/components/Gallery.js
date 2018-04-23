@@ -1,15 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Carousel } from 'antd';
+import 'antd/lib/carousel/style/css';
 
-const Gallery = () => {
+const Gallery = ({ images }) => {
 	const Container = styled.div`
 		height: 80vh;
 		width: 80%;
-		background-color: slateblue;
+		margin-top: 10vh;
 	`;
+
+	const renderCarouselItems = () => {
+		return images.map(i => <img src={i.path} />);
+	}
 
 	return (
 		<Container>
+			<Carousel>
+				{renderCarouselItems()}
+			</Carousel>
 		</Container>
 	);
 };

@@ -13,7 +13,6 @@ import FeatureList from './components/FeatureList';
 //import 'antd/lib/carousel/style/css';        // for css
 //import 'antd/lib/date-picker/style/css';        // for css
 
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -22,15 +21,13 @@ class App extends Component {
 		const TopContainer = styled.div`
 			width: 100%;
 			height: 80vh;
-			background-color: inidianred;
-			display: flex;
-			flex-direction: row;
+			z-index: -2;
 		`;
     return (
       <div className="App">
 				<Title address={Config.address} city={Config.city} state={Config.state} />
 				<TopContainer>
-					<Gallery />
+					<Gallery images={Config.images} />
 					<FeatureList />
 				</TopContainer>
 				<Map />
