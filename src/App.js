@@ -17,7 +17,11 @@ const App = () => {
 			<Title address={Config.address} city={Config.city} state={Config.state} />
 			<GallerySection images={Config.images} features={Config.features} />
 			<Details details={Config.details} />
-			<Map center={Config.center} zoom={Config.zoom} />
+			<div style={{ paddingTop: '20px' }}>
+				{/*
+				<Map center={Config.center} zoom={Config.zoom} />
+				*/}
+			</div>
 		</div>
 	);
 }

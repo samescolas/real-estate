@@ -29,7 +29,12 @@ class Gallery extends Component {
 
 		return (
 			<Container>
-				<Carousel initialSlide={activeImage} afterChange={onChange} autoplay arrows draggable>
+				<Carousel
+					initialSlide={activeImage}
+					afterChange={onChange}
+					autoplay
+					draggable
+				>
 					{renderCarouselItems()}
 				</Carousel>
 			</Container>

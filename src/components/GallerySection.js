@@ -10,9 +10,42 @@ class GallerySection extends Component {
 		super(props);
 		this.state = {
 			activeImage: 0,
-			tags: props.images.map(i => i.categories).reduce((i, acc) => [...acc, ...i]).sort().filter((v, i, a) => (i===0 || v!==a[i-1]))
+			selectedTags: ['All'],
+			tags: props.images
+				/* Map to list of arrays: [['a', 'b', 'c'], ['b', 'd'], [...]] */
+				.map(i => i.categories)
+				/* Combine arrays into one array: ['a', 'b', 'c', 'b', 'd'] */
+				.reduce((i, acc) => [...acc, ...i])
+				/* Sort array: ['a', 'b', 'b', 'c', 'd'] */
+				.sort()
+				/* Remove duplicates: ['a', 'b', 'c', 'd'] */
+				.filter((v, i, a) => (i===0 || v!==a[i-1])),
 		};
 	}
+
+	selectTag = (tag) => {
+		if (tag === 'All') {
+			this.setState({ selectedTags: ['All'] });
+		} else if (this.state.selectedTags[0] === 'All') {
+			this.setState({ selectedTags: [tag] });
+		} else {
+			this.setState({ selectedTags: [tag, ...this.state.selectedTags] });
+		}
+	};
+
+	unselectTag = (tag) => {
+		if (this.state.selectedTags.length === 1) {
+			this.setState({ selectedTags: ['All'] });
+		} else {
+			let ix = this.state.selectedTags.indexOf(tag);
+
+			if (ix >= 0) {
+				this.setState({
+					selectedTags: [...this.state.selectedTags.slice(0, ix), ...this.state.selectedTags.slice(ix+1)]
+				});
+			}
+		}
+	};
 
 	onChange = (activeImage) => {
 		this.setState({ activeImage });
@@ -41,7 +74,13 @@ class GallerySection extends Component {
 			<Container>
 				<Gallery images={images} onCarouselChange={this.onChange} activeImage={this.state.activeImage} />
 				<Details>
-					<TagList tags={this.state.tags} activeTags={images[this.state.activeImage].categories} />
+					<TagList
+						tags={this.state.tags}
+						activeTags={images[this.state.activeImage].categories}
+						selectedTags={this.state.selectedTags}
+						selectTag={this.selectTag}
+						unselectTag={this.unselectTag}
+					/>
 					<FeatureList features={features} />
 				</Details>
 			</Container>
