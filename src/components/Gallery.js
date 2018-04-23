@@ -23,15 +23,25 @@ class Gallery extends Component {
 			margin: 0 auto;
 		`;
 		const Thumbnail = styled.img`
-			height: 40px;
-			width: auto;
+			width: 40px;
+			height: auto;
+			max-height: 45px;
 			&:hover {
-				height: 45px;
-				width: auto;
+				width: 45px;
+				height: auto;
+				max-height: 50px;
 				cursor: pointer;
 				transition: all .4s ease-out;
 			}
 		`;
+		const ActiveThumbnail = styled.img`
+			width: 45px;
+			height: auto;
+			max-height: 45px;
+			&:hover {
+				cursor: pointer;
+			};
+		`
 
 		const renderCarouselItems = () => {
 			return images.map(i => <div key={i.id}><Image className="carousel-image" id={i.id} alt={i.categories[0]} key={i.id} src={i.path} /></div>);
@@ -41,7 +51,10 @@ class Gallery extends Component {
 			return <ul>{images.map((img, ix) => {
 				return (
 					<span key={img.id} id={img.id} onClick={(e) => { this.refs.carousel.goTo(images.findIndex(i=> i.id==e.target.id)); }}>
-						<Thumbnail id={img.id} alt={img.categories[0]} src={img.path} />
+						{ix === activeImage ?
+							<ActiveThumbnail id={img.id} alt={img.categories[0]} src={img.path} /> :
+							<Thumbnail id={img.id} alt={img.categories[0]} src={img.path} />
+						}
 					</span>
 				);
 			})}</ul>;
