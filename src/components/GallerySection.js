@@ -11,6 +11,7 @@ class GallerySection extends Component {
 		this.state = {
 			activeImage: 0,
 			selectedTags: ['All'],
+			filteredImages: props.images,
 			tags: props.images
 				/* Map to list of arrays: [['a', 'b', 'c'], ['b', 'd'], [...]] */
 				.map(i => i.categories)
@@ -23,32 +24,51 @@ class GallerySection extends Component {
 		};
 	}
 
+	filterImages = () => {
+		if (this.state.selectedTags[0] === 'All') {
+			this.setState({ filteredImages: this.props.images });
+		}
+		this.setState({
+			filteredImages: this.props.images.filter(img => {
+				for (var i=0; i<this.state.selectedTags.length; i++) {
+					if (img.categories.includes(this.state.selectedTags[i])) {
+						return true;
+					}
+				}
+				return false;
+			})
+		});
+	};
+
 	selectTag = (tag) => {
 		if (tag === 'All') {
-			this.setState({ selectedTags: ['All'] });
+			this.setState({ selectedTags: ['All'], activeImage: 0 });
 		} else if (this.state.selectedTags[0] === 'All') {
-			this.setState({ selectedTags: [tag] });
+			this.setState({ selectedTags: [tag], activeImage: 0 });
 		} else {
-			this.setState({ selectedTags: [tag, ...this.state.selectedTags] });
+			this.setState({ selectedTags: [tag, ...this.state.selectedTags], activeImage: 0 });
 		}
+		setTimeout(this.filterImages, 500);
 	};
 
 	unselectTag = (tag) => {
 		if (this.state.selectedTags.length === 1) {
-			this.setState({ selectedTags: ['All'] });
+			this.setState({ selectedTags: ['All'], activeImage: 0 });
 		} else {
 			let ix = this.state.selectedTags.indexOf(tag);
 
 			if (ix >= 0) {
 				this.setState({
-					selectedTags: [...this.state.selectedTags.slice(0, ix), ...this.state.selectedTags.slice(ix+1)]
+					selectedTags: [...this.state.selectedTags.slice(0, ix), ...this.state.selectedTags.slice(ix+1)],
+					activeImage: 0
 				});
 			}
 		}
+		setTimeout(this.filterImages, 500);
 	};
 
-	onChange = (activeImage) => {
-		this.setState({ activeImage });
+	onChange = (ix, id) => {
+		this.setState({ activeImage: ix });
 	}
 
 	render() {
@@ -72,11 +92,11 @@ class GallerySection extends Component {
 
 		return (
 			<Container>
-				<Gallery images={images} onCarouselChange={this.onChange} activeImage={this.state.activeImage} />
+				<Gallery images={this.state.filteredImages} onCarouselChange={this.onChange} activeImage={this.state.activeImage} />
 				<Details>
 					<TagList
 						tags={this.state.tags}
-						activeTags={images[this.state.activeImage].categories}
+						activeTags={images[this.state.filteredImages[this.state.activeImage].id].categories}
 						selectedTags={this.state.selectedTags}
 						selectTag={this.selectTag}
 						unselectTag={this.unselectTag}

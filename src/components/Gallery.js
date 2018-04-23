@@ -14,7 +14,7 @@ class Gallery extends Component {
 		`;
 
 		const onChange = (ix) => {
-			onCarouselChange(ix);
+			onCarouselChange(ix, images[ix].id);
 		}
 
 		const Image = styled.img`
@@ -34,6 +34,7 @@ class Gallery extends Component {
 					afterChange={onChange}
 					autoplay
 					draggable
+					infinite={false}
 				>
 					{renderCarouselItems()}
 				</Carousel>
