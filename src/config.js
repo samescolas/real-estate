@@ -21,5 +21,11 @@ export default {
 		"One for the Ages!!! Currently Featured On Fairchild TV & Radio!!!***Welcome To Chateau Inspired Mansion 'Hidden Treasure' Secluded In The Most Prestigious & Expansive Real Estate Region Of Ontario*The King City!* 10,000 Sq/Ft Of Unreal Luxury Living! Sitting On Over 2.5 Acres Surrounded By Forested Lands & Picturesque Sceneries!",
 		"Featuring Extraordinary, Elegant & Luxurious Finishings; Breathtaking Panoramic Views From Every Window With True Feeling Of Privacy & Tranquility! Surreal Tree Lined Circular Driveway! Extensive Exterior Lighting Chef’s Gourmet Kitchen With Thermador Professional Appliances. Built-In Cabana with Spa/Sauna/Hot Tub. 2 Mini Bars, Wine Cellar, Gym/Yoga Room. Outdoors: Stone Oven/Fireplace, Cedar Pool House & Gazebo, In-Ground Pool & So much more!",
 		"A Showcase Home In A Private Enclave With A Very Rare Setting!! A True Masterpiece With Superior Workmanship & Quality Of Materials!!!"
-	]
+	],
+
+	zoom: 16,
+	center: {
+		lat: 42.40,
+		lng: -71.25
+	}
 };

@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 const Details = ({ details }) => {
 	const Container = styled.div`
-		height: 80vh;
 		width: 100%;
 		margin-top: 10vh;
 		padding-top: 2%;
