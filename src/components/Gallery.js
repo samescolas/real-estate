@@ -14,7 +14,7 @@ class Gallery extends Component {
 		`;
 
 		const onChange = (ix) => {
-			onCarouselChange(ix, images[ix].id);
+			onCarouselChange(images[ix].id, ix);
 		}
 
 		const Image = styled.img`
