@@ -40,7 +40,7 @@ class Gallery extends Component {
 		const renderCarouselThumbnails = (dots) => {
 			return <ul>{images.map((img, ix) => {
 				return (
-					<span key={img.id} id={img.id} onClick={(e) => onChange(images.findIndex(i => i.id == e.target.id))}>
+					<span key={img.id} id={img.id} onClick={(e) => { this.refs.carousel.goTo(images.findIndex(i=> i.id==e.target.id)); }}>
 						<Thumbnail id={img.id} alt={img.categories[0]} src={img.path} />
 					</span>
 				);
@@ -58,6 +58,7 @@ class Gallery extends Component {
 		return (
 			<Container>
 				<Carousel
+					ref="carousel"
 					initialSlide={activeImage}
 					afterChange={onChange}
 					autoplay
