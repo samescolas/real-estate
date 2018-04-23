@@ -38,3 +38,8 @@
 .ant-carousel .slick-slide h3 {
   color: #fff;
 }
+
+/* List Item */
+h4.ant-list-item-meta-title {
+	font-size: 1.7vmin;
+}

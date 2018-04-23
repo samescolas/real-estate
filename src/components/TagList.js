@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Tag } from 'antd';
+import 'antd/lib/tag/style/css';
 
 const TagList = ({ tags }) => {
 
@@ -13,7 +15,7 @@ const TagList = ({ tags }) => {
 		padding-top: 2vh;
 	`;
 
-	const renderTags = () => tags.map(c => <p>{c}</p>);
+	const renderTags = () => tags.map(c => <Tag>{c}</Tag>);
 
 	return (
 		<Container>

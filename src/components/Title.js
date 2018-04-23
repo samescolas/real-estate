@@ -23,6 +23,8 @@ const Title = ({ address, city, state }) => {
 		justify-self: flex-start;
 		flex: 3;
 		text-shadow: 1px 0 1px #333;
+		font-family: 'Allura', sans-serif;
+		font-size: 3.4vmin;
 	`;
 	const City = styled.h3`
 		display: inline;

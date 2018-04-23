@@ -7,7 +7,6 @@ const Map = () => {
 		height: 80vh;
 		width: 100%;
 		background-color: lightpink;
-		margin-top: 10vh;
 	`;
 
 	return (
