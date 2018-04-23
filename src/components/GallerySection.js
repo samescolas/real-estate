@@ -20,12 +20,13 @@ class GallerySection extends Component {
 
 	render() {
 		const { images, features } = this.props;
-		const TopContainer = styled.div`
+		const Container = styled.div`
 			width: 100%;
 			height: 80vh;
 			z-index: -2;
 			display: flex;
 			flex-direction: row;
+			margin-top: 20px;
 		`;
 		const Details = styled.div`
 			width: 18%;
@@ -37,13 +38,13 @@ class GallerySection extends Component {
 		`;
 
 		return (
-			<TopContainer>
+			<Container>
 				<Gallery images={images} onCarouselChange={this.onChange} activeImage={this.state.activeImage} />
 				<Details>
 					<TagList tags={this.state.tags} activeTags={images[this.state.activeImage].categories} />
 					<FeatureList features={features} />
 				</Details>
-			</TopContainer>
+			</Container>
 		);
 	}
 }
