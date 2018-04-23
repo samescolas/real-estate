@@ -15,5 +15,6 @@ export default {
 		{ id: 10, path: '/imgs/office2.jpg', categories: ['Second Office', 'Office'] },
 		{ id: 11, path: '/imgs/outside1.jpg', categories: ['Outside'] },
 		{ id: 12, path: '/imgs/outside2.jpg', categories: ['Outside'] },
-	]
+	],
+	features: ['Pool', 'Patio', 'Rooftop Deck', '2BR', '3BR']
 };

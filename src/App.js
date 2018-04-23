@@ -4,10 +4,9 @@ import styled from 'styled-components';
 import Config from './config';
 
 import Title from './components/Title';
-import Gallery from './components/Gallery';
 import Map from './components/Map';
-import TagList from './components/TagList';
-import FeatureList from './components/FeatureList';
+
+import GallerySection from './components/GallerySection';
 
 //import { Carousel, DatePicker } from 'antd';
 //import 'antd/lib/carousel/style/css';        // for css
@@ -18,20 +17,11 @@ import './App.css';
 class App extends Component {
 
   render() {
-		const TopContainer = styled.div`
-			width: 100%;
-			height: 80vh;
-			z-index: -2;
-		`;
     return (
       <div className="App">
 				<Title address={Config.address} city={Config.city} state={Config.state} />
-				<TopContainer>
-					<Gallery images={Config.images} />
-					<FeatureList />
-				</TopContainer>
+				<GallerySection images={Config.images} features={Config.features} />
 				<Map />
-				<TagList />
       </div>
     );
   }
