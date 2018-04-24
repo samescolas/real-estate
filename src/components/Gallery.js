@@ -151,7 +151,7 @@ class Gallery extends Component {
           //autoplay
           draggable
           infinite={true}
-          appendDots={renderCarouselThumbnails}
+          //appendDots={renderCarouselThumbnails}
         >
           {renderCarouselItems()}
         </Carousel>

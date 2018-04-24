@@ -15,7 +15,7 @@ class GallerySection extends Component {
         id: 0,
         ix: 0
       },
-      selectedTags: ["All"],
+      selectedTags: ["View All Photos"],
       filteredImages: props.images,
       tags: props.images
         /* Map to list of arrays: [['a', 'b', 'c'], ['b', 'd'], [...]] */
@@ -30,7 +30,7 @@ class GallerySection extends Component {
   }
 
   filterImages = tags => {
-    if (tags[0] === "All") {
+    if (tags[0] === "View All Photos") {
       return this.props.images;
     }
     return this.props.images.filter(img => {
@@ -45,9 +45,9 @@ class GallerySection extends Component {
 
   selectTag = tag => {
     let newTags;
-    if (tag === "All") {
-      newTags = ["All"];
-    } else if (this.state.selectedTags[0] === "All") {
+    if (tag === "View All Photos") {
+      newTags = ["View All Photos"];
+    } else if (this.state.selectedTags[0] === "View All Photos") {
       newTags = [tag];
     } else {
       newTags = [tag, ...this.state.selectedTags];
@@ -65,7 +65,7 @@ class GallerySection extends Component {
   unselectTag = tag => {
     let newTags;
     if (this.state.selectedTags.length === 1) {
-      newTags = ["All"];
+      newTags = ["View All Photos"];
     } else {
       let ix = this.state.selectedTags.indexOf(tag);
       newTags = [
@@ -105,24 +105,28 @@ class GallerySection extends Component {
     `;*/
 
     return (
-      <Row>
-        <Col md={24} xs={24}>
-          <Gallery
-            images={this.state.filteredImages}
-            onCarouselChange={this.onChange}
-            activeImage={this.state.activeImage.ix}
-          />
-        </Col>
-        <Col md={24} xs={24}>
-          <TagList
-            tags={this.state.tags}
-            activeTags={images[this.state.activeImage.id].categories}
-            selectedTags={this.state.selectedTags}
-            selectTag={this.selectTag}
-            unselectTag={this.unselectTag}
-          />
-        </Col>
-      </Row>
+      <React.Fragment>
+        <Row>
+          <Col md={24} xs={24}>
+            <Gallery
+              images={this.state.filteredImages}
+              onCarouselChange={this.onChange}
+              activeImage={this.state.activeImage.ix}
+            />
+          </Col>
+        </Row>
+        <Row>
+          <Col md={24} xs={24}>
+            <TagList
+              tags={this.state.tags}
+              activeTags={images[this.state.activeImage.id].categories}
+              selectedTags={this.state.selectedTags}
+              selectTag={this.selectTag}
+              unselectTag={this.unselectTag}
+            />
+          </Col>
+        </Row>
+      </React.Fragment>
     );
   }
 }

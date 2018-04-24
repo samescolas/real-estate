@@ -20,8 +20,6 @@ const Title = ({ address, city, state }) => {
     box-shadow: 0px 0px 2px #333;
   `;
   const Address = styled.h1`
-    justify-self: flex-start;
-    flex: 3;
     font-family: "Allura", sans-serif;
     font-size: 30px;
     margin-top: 20px;
@@ -36,10 +34,10 @@ const Title = ({ address, city, state }) => {
   return (
     <Container>
       <Address>{address}</Address>
-      <div style={{ paddingRight: "40px" }}>
+      {/*<div style={{ paddingRight: "40px" }}>
         <City>{city}, </City>
         <State>{state}</State>
-      </div>
+  </div>*/}
     </Container>
   );
 };

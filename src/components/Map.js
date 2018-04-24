@@ -8,26 +8,25 @@ import {
   Marker
 } from "react-google-maps";
 
-const tempKey = 'AIzaSyCARbwqVq47aEupX8ar238sT-Pd933_iB4';
+const tempKey = "AIzaSyCARbwqVq47aEupX8ar238sT-Pd933_iB4";
 
 const MyMapComponent = compose(
-	withProps({
-		/**
-		 * Note: create and replace your own key in the Google console.
-		 * https://console.developers.google.com/apis/dashboard
-		 */
-		googleMapURL:
-			`https://dmaps.googleapis.com/maps/api/js?key=${tempKey}&v=3.exp&libraries=geometry,drawing,places`,
-		loadingElement: <div style={{ height: `100%` }} />,
-		containerElement: <div style={{ height: `400px`, marginTop: `20px` }} />,
-		mapElement: <div style={{ height: `100%` }} />
-	}),
-	withScriptjs,
-	withGoogleMap
+  withProps({
+    /**
+     * Note: create and replace your own key in the Google console.
+     * https://console.developers.google.com/apis/dashboard
+     */
+    googleMapURL: `https://dmaps.googleapis.com/maps/api/js?key=${tempKey}&v=3.exp&libraries=geometry,drawing,places`,
+    loadingElement: <div style={{ height: `100%` }} />,
+    containerElement: <div style={{ height: `400px`, marginTop: `20px` }} />,
+    mapElement: <div style={{ height: `100%` }} />
+  }),
+  withScriptjs,
+  withGoogleMap
 )(props => (
-	<GoogleMap defaultZoom={props.zoom} defaultCenter={{ ...props.center }}>
-		<Marker position={{ ...props.center }} />
-	</GoogleMap>
+  <GoogleMap defaultZoom={props.zoom} defaultCenter={{ ...props.center }}>
+    <Marker position={{ ...props.center }} />
+  </GoogleMap>
 ));
 
 export default MyMapComponent;
