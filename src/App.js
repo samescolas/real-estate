@@ -16,7 +16,7 @@ const App = () => {
 	return (
 		<div className="App">
 			<Title address={Config.address} city={Config.city} state={Config.state} />
-			<GallerySection images={Config.images} features={Config.features} />
+			<GallerySection images={Config.images} />
 			<Details details={Config.details} />
 			<FeatureList features={Config.features} />
 			<div style={{ paddingTop: '20px' }}>
