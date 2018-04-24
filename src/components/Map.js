@@ -1,4 +1,5 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import { compose, withProps } from "recompose";
 import {
   withScriptjs,
