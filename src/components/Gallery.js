@@ -96,7 +96,7 @@ class Gallery extends Component {
 		return (
 			<Container>
 				<ArrowContainer>
-					<Arrow onClick={() => this.refs.carousel.previous()}><Icon type="double-left" /></Arrow>
+					<Arrow onClick={() => this.refs.carousel.prev()}><Icon type="double-left" /></Arrow>
 					<Arrow onClick={() => this.refs.carousel.next()}><Icon type="double-right" /></Arrow>
 				</ArrowContainer>
 				<Carousel
