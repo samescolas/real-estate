@@ -109,6 +109,7 @@ class GallerySection extends Component {
 						selectTag={this.selectTag}
 						unselectTag={this.unselectTag}
 					/>
+					<FeatureList features={features} />
 				</Details>
 			</Container>
 		);
