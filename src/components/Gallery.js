@@ -29,6 +29,9 @@ class Gallery extends Component {
     const Arrow = styled.span`
       font-size: 4vmin;
       color: rgba(42, 17, 13, 0.7);
+      border-radius: 50%;
+      padding: 4px 12px;
+      background: white;
       &:hover {
         cursor: pointer;
         color: rgba(42, 17, 13, 1);
@@ -43,7 +46,7 @@ class Gallery extends Component {
 
     const Image = styled.img`
       height: 80vh;
-      width: auto;
+      width: 100%;
       margin: 0 auto;
     `;
     const Thumbnail = styled.img`
@@ -145,9 +148,9 @@ class Gallery extends Component {
           ref="carousel"
           initialSlide={activeImage}
           afterChange={onChange}
-          autoplay
+          //autoplay
           draggable
-          infinite={false}
+          infinite={true}
           appendDots={renderCarouselThumbnails}
         >
           {renderCarouselItems()}

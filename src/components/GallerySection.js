@@ -106,14 +106,14 @@ class GallerySection extends Component {
 
     return (
       <Row>
-        <Col md={20} xs={24}>
+        <Col md={24} xs={24}>
           <Gallery
             images={this.state.filteredImages}
             onCarouselChange={this.onChange}
             activeImage={this.state.activeImage.ix}
           />
         </Col>
-        <Col md={4} xs={24}>
+        <Col md={24} xs={24}>
           <TagList
             tags={this.state.tags}
             activeTags={images[this.state.activeImage.id].categories}
