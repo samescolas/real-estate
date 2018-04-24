@@ -6,10 +6,14 @@ import 'antd/lib/list/style/css';
 const FeatureList = ({ features }) => {
 	const Container = styled.div`
 		font-family: 'Raleway', sans-serif;
+		margin-top: 16vh;
+		margin-left: 5%;
+		width: 90%;
 	`;
 	const SectionHeader = styled.h3`
-		font-weight: bold;
-		font-size: 2vmin;
+		font-size: 5vmin;
+		font-family: 'Allura', sans-serif;
+		text-shadow: 1px 0 1px #333;
 	`;
 
 	return (

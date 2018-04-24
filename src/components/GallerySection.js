@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 import Gallery from './Gallery';
 import TagList from './TagList';
-import FeatureList from './FeatureList';
 
 class GallerySection extends Component {
 	constructor(props) {
@@ -81,7 +80,7 @@ class GallerySection extends Component {
 	}
 
 	render() {
-		const { images, features } = this.props;
+		const { images } = this.props;
 		const Container = styled.div`
 			width: 100%;
 			height: 80vh;
@@ -110,7 +109,6 @@ class GallerySection extends Component {
 						selectTag={this.selectTag}
 						unselectTag={this.unselectTag}
 					/>
-					<FeatureList features={features} />
 				</Details>
 			</Container>
 		);

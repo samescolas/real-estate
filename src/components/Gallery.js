@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Carousel } from 'antd';
+import { Carousel, Icon } from 'antd';
 import 'antd/lib/carousel/style/css';
+import 'antd/lib/icon/style/css';
 
 class Gallery extends Component {
 
@@ -11,7 +12,31 @@ class Gallery extends Component {
 			width: 80%;
 			height: 80vh;
 			margin-top: 10vh;
+			position: relative;
 		`;
+		const ArrowContainer = styled.div`
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 80%;
+			height: 100%;
+			margin-left: 10%; 
+			z-index: 3;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+		`;
+		const Arrow = styled.span`
+			font-size: 4vmin;
+			color: rgba(42, 17, 13, 0.7);
+			&:hover {
+				cursor: pointer;
+				color: rgba(42, 17, 13, 1);
+				font-size: 4.2vmin;
+				transition: all 0.5s;
+			};
+		`
 
 		const onChange = (ix) => {
 			onCarouselChange(images[ix].id, ix);
@@ -70,6 +95,10 @@ class Gallery extends Component {
 
 		return (
 			<Container>
+				<ArrowContainer>
+					<Arrow onClick={() => this.refs.carousel.previous()}><Icon type="double-left" /></Arrow>
+					<Arrow onClick={() => this.refs.carousel.next()}><Icon type="double-right" /></Arrow>
+				</ArrowContainer>
 				<Carousel
 					ref="carousel"
 					initialSlide={activeImage}
