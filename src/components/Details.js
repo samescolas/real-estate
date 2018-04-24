@@ -9,7 +9,7 @@ const Details = ({ details }) => {
 	`;
 	const SectionHeader = styled.h2`
 		text-align: center;
-		font-size: 2.7vmin;
+		font-size: 5vmin;
 		font-family: 'Allura', sans-seif;
 		text-shadow: 1px 0 1px #333;
 	`;
@@ -18,7 +18,7 @@ const Details = ({ details }) => {
 		width: 80%;
 		margin-left: 10%;
 		padding-top: 1%;
-		font-size: 1.4vmin;
+		font-size: 2.2vmin;
 		font-family: 'Raleway', sans-seif;
 	`;
 	const renderDetails = () => {
