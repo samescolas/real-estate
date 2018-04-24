@@ -42,3 +42,18 @@
 h4.ant-list-item-meta-title {
 	font-size: 1.7vmin;
 }
+
+/* Tags */
+div.ant-tag {
+	margin: 5px;
+	font-size: 2vmin;
+}
+
+@media (min-width: 780px) {
+	div.ant-tag {
+		min-width: 40%;
+		margin: 5px;
+		height: 3.4vh;
+		padding-top: 0.5vh;
+	}
+}
