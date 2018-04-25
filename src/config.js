@@ -70,9 +70,8 @@ export default {
   ],
   features: ["Pool", "Patio", "Rooftop Deck", "2BR", "3BR"],
   details: [
-    "One for the Ages!!! Currently Featured On Fairchild TV & Radio!!!***Welcome To Chateau Inspired Mansion 'Hidden Treasure' Secluded In The Most Prestigious & Expansive Real Estate Region Of Ontario*The King City!* 10,000 Sq/Ft Of Unreal Luxury Living! Sitting On Over 2.5 Acres Surrounded By Forested Lands & Picturesque Sceneries!",
-    "Featuring Extraordinary, Elegant & Luxurious Finishings; Breathtaking Panoramic Views From Every Window With True Feeling Of Privacy & Tranquility! Surreal Tree Lined Circular Driveway! Extensive Exterior Lighting Chef’s Gourmet Kitchen With Thermador Professional Appliances. Built-In Cabana with Spa/Sauna/Hot Tub. 2 Mini Bars, Wine Cellar, Gym/Yoga Room. Outdoors: Stone Oven/Fireplace, Cedar Pool House & Gazebo, In-Ground Pool & So much more!",
-    "A Showcase Home In A Private Enclave With A Very Rare Setting!! A True Masterpiece With Superior Workmanship & Quality Of Materials!!!"
+    "*Luxury&Timeless Extraordinary Elegance On ~ Nearly 1 Acre Lot!! A True Masterpiece French Inspired Palace In The Prestigious Oakbank Pond & Thornhill Country Club Neighbourhood. Gracious Estate Invites Grand Entertaining & Serene Living.*Featuring: An Ambiance Of Unequal Charm. Magnificent Outdoor Living Area W/Panoramic Vistas. Indoor Cabana Pool, Jacuzzi, Bar. Complete Fitness Centre W/Sauna. Walkup Bsmt, Circular Drive W/Gates. 4 Car Garage!!*",
+    "Extras:Over 10,000 Sf Of Luxurious Detail & Craftsmanship! A Palacial Estate Of Remarkable Quality!! 10Ft Ceilings. Gorgeous Cathedral Grand Foyer*Skylights*Custom Wood/Iron Railings*Wet Bars*Gas F/Ps*Custom Gourmet Kitchen"
   ],
 
   zoom: 16,
