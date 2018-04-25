@@ -13,6 +13,9 @@ const App = () => {
     <div className="App">
       <Title address={Config.address} city={Config.city} state={Config.state} />
       <GallerySection images={Config.images} />
+
+      <Details details={Config.details} />
+
       <div style={{ paddingTop: "20px" }}>
         <h2>Property Film</h2>
         {/*https://www.npmjs.com/package/react-player*/}
@@ -26,7 +29,7 @@ const App = () => {
           }}
         />
       </div>
-      <Details details={Config.details} />
+
       {/*<FeatureList features={Config.features} />*/}
 
       <div style={{ paddingTop: "20px" }}>

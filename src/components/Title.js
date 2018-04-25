@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Title = ({ address, city, state }) => {
   const Container = styled.div`
-    height: 10vh;
+    height: 60px;
     width: 100%;
     background-color: #fafafa;
     position: fixed;
@@ -16,7 +16,7 @@ const Title = ({ address, city, state }) => {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    z-index: 2;
+    z-index: 100;
     box-shadow: 0px 0px 2px #333;
   `;
   const Address = styled.h1`

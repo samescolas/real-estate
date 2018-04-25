@@ -6,12 +6,16 @@ p {
   font-size: 15px;
   font-family: "Raleway", sans-seif;
 }
+h1 {
+  font-weight: bold;
+}
 
 h2 {
   text-align: center;
-  font-size: 25px;
+  font-size: 30px;
   font-family: "Allura", sans-seif;
   /*text-shadow: 1px 0 1px #333;*/
+  margin: 20px;
 }
 
 h3 {
@@ -48,7 +52,6 @@ h3 {
 /* Carousel */
 .ant-carousel .slick-slide {
   text-align: center;
-  height: 80vh;
   line-height: 160px;
   overflow: hidden;
 }
@@ -69,14 +72,12 @@ h4.ant-list-item-meta-title {
 /* Tags */
 div.ant-tag {
   margin: 5px;
-  font-size: 2vmin;
 }
 
-@media (min-width: 780px) {
-  div.ant-tag {
-    min-width: 40%;
-    margin: 5px;
-    height: 3.4vh;
-    padding-top: 0.5vh;
-  }
+.tagList {
+  padding: 14px;
+}
+
+.ant-carousel .slick-slide {
+  line-height: inherit;
 }

@@ -1,101 +1,72 @@
 export default {
-  address: "3205 Kings Street",
+  address: "23 Thornridge Dr, Thornhill",
   city: "Richmond Hill",
   state: "Ontario",
   images: [
+    { id: 0, path: "/imgs/_1.jpg", categories: ["Front"] },
+    { id: 1, path: "/imgs/_3.jpg", categories: ["Front", "Driveway"] },
+    { id: 2, path: "/imgs/_4.jpg", categories: ["Front", "Driveway"] },
+    { id: 3, path: "/imgs/_5.jpg", categories: ["Driveway", "Garage"] },
+    { id: 4, path: "/imgs/_6.jpg", categories: ["Main Entrance"] },
+    { id: 5, path: "/imgs/_7.jpg", categories: ["Main Entrance"] },
+    { id: 6, path: "/imgs/_8.jpg", categories: ["Main Entrance", "Stairs"] },
+    { id: 7, path: "/imgs/_9.jpg", categories: ["Main Entrance", "Stairs"] },
+    { id: 8, path: "/imgs/_10.jpg", categories: ["Main Entrance", "Stairs"] },
+    { id: 9, path: "/imgs/_11.jpg", categories: ["Living"] },
+    { id: 10, path: "/imgs/_12.jpg", categories: ["Dinning"] },
+    { id: 11, path: "/imgs/_13.jpg", categories: ["Dinning"] },
+    { id: 12, path: "/imgs/_14.jpg", categories: ["Celings"] },
+    { id: 13, path: "/imgs/_15.jpg", categories: ["Kitchen"] },
+    { id: 14, path: "/imgs/_16.jpg", categories: ["Kitchen"] },
+    { id: 15, path: "/imgs/_17.jpg", categories: ["Kitchen"] },
+    { id: 16, path: "/imgs/_18.jpg", categories: ["Kitchen", "Breakfest"] },
+    { id: 17, path: "/imgs/_19.jpg", categories: ["Kitchen"] },
+    { id: 18, path: "/imgs/_20.jpg", categories: ["Breakfest"] },
+    { id: 19, path: "/imgs/_21.jpg", categories: ["Breakfest", "View"] },
+    { id: 20, path: "/imgs/_22.jpg", categories: ["Family"] },
+    { id: 21, path: "/imgs/_23.jpg", categories: ["Family", "Fireplace"] },
+    { id: 22, path: "/imgs/_24.jpg", categories: ["Family", "Fireplace"] },
+    { id: 23, path: "/imgs/_25.jpg", categories: ["Office"] },
+    { id: 24, path: "/imgs/_26.jpg", categories: ["Powder Room", "Fireplace"] },
+    { id: 25, path: "/imgs/_27.jpg", categories: ["Pool"] },
+    { id: 26, path: "/imgs/_28.jpg", categories: ["Pool"] },
+    { id: 27, path: "/imgs/_29.jpg", categories: ["Laundry"] },
     {
-      id: 0,
-      path: "/imgs/WEB-001-1024x683.jpg",
-      categories: ["Front", "Driveway"]
+      id: 28,
+      path: "/imgs/_30.jpg",
+      categories: ["Stairs", "2nd Floor", "Chandelier"]
     },
     {
-      id: 1,
-      path: "/imgs/WEB-002-1024x682.jpg",
-      categories: ["Driveway", "outdoors"]
+      id: 29,
+      path: "/imgs/_31.jpg",
+      categories: ["Stairs", "2nd Floor", "Chandelier"]
     },
-    {
-      id: 2,
-      path: "/imgs/WEB-003-1024x683.jpg",
-      categories: ["Front", "Driveway"]
-    },
-    {
-      id: 3,
-      path: "/imgs/WEB-003-4-1024x657.jpg",
-      categories: ["Front", "Driveway"]
-    },
-    {
-      id: 4,
-      path: "/imgs/WEB-004-1-1024x682.jpg",
-      categories: ["Front", "Driveway"]
-    },
-    {
-      id: 5,
-      path: "/imgs/WEB-005-1024x683.jpg",
-      categories: ["Drone", "Bird’s Eye"]
-    },
-    {
-      id: 6,
-      path: "/imgs/WEB-006-1024x683.jpg",
-      categories: ["Drone", "Bird’s Eye"]
-    },
-    { id: 7, path: "/imgs/WEB-007-1024x682.jpg", categories: ["Driveway"] },
-    { id: 8, path: "/imgs/WEB-008-1024x683.jpg", categories: ["Driveway"] },
-    { id: 9, path: "/imgs/WEB-009-1024x683.jpg", categories: ["Stairs"] },
-    {
-      id: 10,
-      path: "/imgs/WEB-010-1024x682.jpg",
-      categories: ["Fireplace", "Living", "Stairs"]
-    },
-    { id: 11, path: "/imgs/WEB-011-1024x683.jpg", categories: ["Dinning"] },
-    {
-      id: 12,
-      path: "/imgs/WEB-012-1024x682.jpg",
-      categories: ["Family", "View"]
-    },
-    {
-      id: 13,
-      path: "/imgs/WEB-013-1024x683.jpg",
-      categories: ["Kitchen", "View"]
-    },
-    { id: 14, path: "/imgs/WEB-014-1024x683.jpg", categories: ["Kitchen"] },
-    {
-      id: 15,
-      path: "/imgs/WEB-015-1024x683.jpg",
-      categories: ["Kitchen", "View"]
-    },
-    { id: 16, path: "/imgs/WEB-016-1024x682.jpg", categories: ["Office"] },
-    { id: 17, path: "/imgs/WEB-017-1024x682.jpg", categories: ["Powder Room"] },
-    {
-      id: 18,
-      path: "/imgs/WEB-018-1024x682.jpg",
-      categories: ["Mud Room", "Stairs"]
-    },
-    {
-      id: 19,
-      path: "/imgs/WEB-019-1-1024x682.jpg",
-      categories: ["Basement", "Jackuzie"]
-    },
-    {
-      id: 20,
-      path: "/imgs/WEB-019-1024x683.jpg",
-      categories: ["Basement", "Jackuzie"]
-    },
-    { id: 21, path: "/imgs/WEB-020-1024x682.jpg", categories: ["Kitchenet"] },
-    {
-      id: 22,
-      path: "/imgs/WEB-021-1-1024x718.jpg",
-      categories: ["Jackuzie", "View"]
-    },
-    {
-      id: 23,
-      path: "/imgs/WEB-021-764x1024.jpg",
-      categories: ["Jackuzie", "View"]
-    },
-    {
-      id: 24,
-      path: "/imgs/WEB-022-1024x682.jpg",
-      categories: ["Jackuzie", "View", "Fireplace"]
-    }
+    { id: 30, path: "/imgs/_32.jpg", categories: ["Bedroom", "2nd Floor"] },
+    { id: 31, path: "/imgs/_33.jpg", categories: ["Bedroom", "2nd Floor"] },
+    { id: 32, path: "/imgs/_34.jpg", categories: ["Bathroom", "2nd Floor"] },
+    { id: 33, path: "/imgs/_35.jpg", categories: ["Bedroom", "2nd Floor"] },
+    { id: 34, path: "/imgs/_36.jpg", categories: ["Bedroom", "2nd Floor"] },
+    { id: 35, path: "/imgs/_37.jpg", categories: ["Bathroom", "2nd Floor"] },
+    { id: 36, path: "/imgs/_38.jpg", categories: ["Bathroom", "2nd Floor"] },
+    { id: 37, path: "/imgs/_39.jpg", categories: ["Bedroom", "2nd Floor"] },
+    { id: 38, path: "/imgs/_40.jpg", categories: ["Bathroom", "2nd Floor"] },
+    { id: 39, path: "/imgs/_41.jpg", categories: ["Bedroom", "2nd Floor"] },
+    { id: 40, path: "/imgs/_42.jpg", categories: ["Bathroom", "2nd Floor"] },
+    { id: 41, path: "/imgs/_43.jpg", categories: ["Living", "2nd Floor"] },
+    { id: 42, path: "/imgs/_44.jpg", categories: ["Bathroom", "2nd Floor"] },
+    { id: 43, path: "/imgs/_45.jpg", categories: ["Basement", "Gym"] },
+    { id: 44, path: "/imgs/_46.jpg", categories: ["Basement", "Bar"] },
+    { id: 45, path: "/imgs/_47.jpg", categories: ["Basement"] },
+    { id: 46, path: "/imgs/_48.jpg", categories: ["Basement", "Fireplace"] },
+    { id: 47, path: "/imgs/_49.jpg", categories: ["Closet", "Basement"] },
+    { id: 48, path: "/imgs/_50.jpg", categories: ["Sauna", "Basement"] },
+    { id: 49, path: "/imgs/_51.jpg", categories: ["Sauna", "Basement"] },
+    { id: 50, path: "/imgs/_52.jpg", categories: ["Gym", "Basement"] },
+    { id: 51, path: "/imgs/_53.jpg", categories: ["Bathroom", "Basement"] },
+    { id: 52, path: "/imgs/_54.jpg", categories: ["Backyard"] },
+    { id: 53, path: "/imgs/_55.jpg", categories: ["Backyard", "Gazibo"] },
+    { id: 54, path: "/imgs/_56.jpg", categories: ["Backyard", "Patio"] },
+    { id: 55, path: "/imgs/_57.jpg", categories: ["Backyard", "Patio"] }
   ],
   features: ["Pool", "Patio", "Rooftop Deck", "2BR", "3BR"],
   details: [
@@ -106,7 +77,7 @@ export default {
 
   zoom: 16,
   center: {
-    lat: 42.4,
-    lng: -71.25
+    lat: 43.8125278,
+    lng: -79.4276323
   }
 };

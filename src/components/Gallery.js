@@ -5,12 +5,46 @@ import "antd/lib/carousel/style/css";
 import "antd/lib/icon/style/css";
 
 class Gallery extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { width: 0, height: 0 };
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+  }
+
+  componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener("resize", this.updateWindowDimensions);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateWindowDimensions);
+  }
+
+  updateWindowDimensions() {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
+  }
+
   render() {
     const { images, onCarouselChange, activeImage } = this.props;
+
+    let width = this.state.width;
+    let height = this.state.height;
+    let imageHeight = 0;
+
+    if (width < 576) {
+      imageHeight = height * 0.6;
+    } else if (width < 768) {
+      imageHeight = height * 0.7;
+    } else if (width < 992) {
+      imageHeight = height * 0.8;
+    } else {
+      imageHeight = height;
+    }
+
+    console.log(height, imageHeight);
+
     const Container = styled.div`
       width: 100%;
-      height: 80vh;
-      margin-top: 10vh;
       position: relative;
     `;
     const ArrowContainer = styled.div`
@@ -44,10 +78,11 @@ class Gallery extends Component {
       onCarouselChange(images[ix].id, ix);
     };
 
-    const Image = styled.img`
-      height: 80vh;
+    const Image = styled.div`
       width: 100%;
-      margin: 0 auto;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
     `;
     const Thumbnail = styled.img`
       width: 40px;
@@ -70,6 +105,21 @@ class Gallery extends Component {
       }
     `;
 
+    /*
+    // Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+*/
+
     const renderCarouselItems = () => {
       return images.map(i => (
         <div key={i.id}>
@@ -78,7 +128,11 @@ class Gallery extends Component {
             id={i.id}
             alt={i.categories[0]}
             key={i.id}
-            src={i.path}
+            //src={i.path}
+            style={{
+              backgroundImage: "url('" + i.path + "')",
+              height: imageHeight
+            }}
           />
         </div>
       ));
@@ -151,6 +205,7 @@ class Gallery extends Component {
           //autoplay
           draggable
           infinite={true}
+          dots={false}
           //appendDots={renderCarouselThumbnails}
         >
           {renderCarouselItems()}

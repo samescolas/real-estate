@@ -24,6 +24,7 @@ const MyMapComponent = compose(
   withScriptjs,
   withGoogleMap
 )(props => (
+  //https://github.com/google-map-react/google-map-react/blob/master/API.md
   <GoogleMap defaultZoom={props.zoom} defaultCenter={{ ...props.center }}>
     <Marker position={{ ...props.center }} />
   </GoogleMap>

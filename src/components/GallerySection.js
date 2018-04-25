@@ -106,17 +106,15 @@ class GallerySection extends Component {
 
     return (
       <React.Fragment>
-        <Row>
-          <Col md={24} xs={24}>
+        <Row style={{ paddingTop: "10px" }}>
+          <Col xs={24}>
             <Gallery
               images={this.state.filteredImages}
               onCarouselChange={this.onChange}
               activeImage={this.state.activeImage.ix}
             />
           </Col>
-        </Row>
-        <Row>
-          <Col md={24} xs={24}>
+          <Col xs={24} className="tagList">
             <TagList
               tags={this.state.tags}
               activeTags={images[this.state.activeImage.id].categories}
