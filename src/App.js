@@ -9,12 +9,23 @@ import "./App.css";
 import ReactPlayer from "react-player";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Analytics from "react-router-ga";
+import { Helmet } from "react-helmet";
 
 //google analytics
 
 const Main = () => {
   return (
     <div className="App">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Official 23 THORNRIDGE DR, THORNHILL, ON</title>
+        <meta
+          name="description"
+          content="Luxury and Timeless Extraordinary Elegance On ~ Nearly 1 Acre Lot!! A True Masterpiece French Inspired Palace In The Prestigious Oakbank Pond & Thornhill Country Club Neighbourhood."
+        />
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
+
       <Title address={Config.address} city={Config.city} state={Config.state} />
       <GallerySection images={Config.images} />
 
