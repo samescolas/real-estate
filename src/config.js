@@ -15,7 +15,7 @@ export default {
     { id: 9, path: "/imgs/_11.jpg", categories: ["Living"] },
     { id: 10, path: "/imgs/_12.jpg", categories: ["Dining"] },
     { id: 11, path: "/imgs/_13.jpg", categories: ["Dining"] },
-    { id: 12, path: "/imgs/_14.jpg", categories: ["Celing"] },
+    { id: 12, path: "/imgs/_14.jpg", categories: ["Ceiling"] },
     { id: 13, path: "/imgs/_15.jpg", categories: ["Kitchen"] },
     { id: 14, path: "/imgs/_16.jpg", categories: ["Kitchen"] },
     { id: 15, path: "/imgs/_17.jpg", categories: ["Kitchen"] },

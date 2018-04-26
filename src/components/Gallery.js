@@ -41,8 +41,6 @@ class Gallery extends Component {
       imageHeight = height;
     }
 
-    console.log(height, imageHeight);
-
     const Container = styled.div`
       width: 100%;
       position: relative;

@@ -44,35 +44,16 @@ class GallerySection extends Component {
   };
 
   selectTag = tag => {
-    let newTags;
-    if (tag === "View All Photos") {
-      newTags = ["View All Photos"];
-    } else if (this.state.selectedTags[0] === "View All Photos") {
-      newTags = [tag];
-    } else {
-      newTags = [tag, ...this.state.selectedTags];
-    }
-    console.log("Set tags to ", newTags);
-    let newImgs = this.filterImages(newTags);
-    console.log("Set images to ", newImgs);
+    let newImgs = this.filterImages([tag]);
     this.setState({
-      selectedTags: newTags,
+      selectedTags: [tag],
       activeImage: { id: newImgs[0].id, ix: 0 },
       filteredImages: newImgs
     });
   };
 
   unselectTag = tag => {
-    let newTags;
-    if (this.state.selectedTags.length === 1) {
-      newTags = ["View All Photos"];
-    } else {
-      let ix = this.state.selectedTags.indexOf(tag);
-      newTags = [
-        ...this.state.selectedTags.slice(0, ix),
-        ...this.state.selectedTags.slice(ix + 1)
-      ];
-    }
+		let newTags = ["View All Photos"];
     let newImgs = this.filterImages(newTags);
     this.setState({
       selectedTags: newTags,
