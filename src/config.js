@@ -70,8 +70,8 @@ export default {
   ],
   features: ["Pool", "Patio", "Rooftop Deck", "2BR", "3BR"],
   details: [
-    "*Luxury&Timeless Extraordinary Elegance On ~ Nearly 1 Acre Lot!! A True Masterpiece French Inspired Palace In The Prestigious Oakbank Pond & Thornhill Country Club Neighbourhood. Gracious Estate Invites Grand Entertaining & Serene Living.*Featuring: An Ambiance Of Unequal Charm. Magnificent Outdoor Living Area W/Panoramic Vistas. Indoor Cabana Pool, Jacuzzi, Bar. Complete Fitness Centre W/Sauna. Walkup Bsmt, Circular Drive W/Gates. 4 Car Garage!!*",
-    "Extras:Over 10,000 Sf Of Luxurious Detail & Craftsmanship! A Palacial Estate Of Remarkable Quality!! 10Ft Ceilings. Gorgeous Cathedral Grand Foyer*Skylights*Custom Wood/Iron Railings*Wet Bars*Gas F/Ps*Custom Gourmet Kitchen"
+    "Luxury&Timeless Extraordinary Elegance On ~ Nearly 1 Acre Lot!! A True Masterpiece French Inspired Palace In The Prestigious Oakbank Pond & Thornhill Country Club Neighbourhood. Gracious Estate Invites Grand Entertaining & Serene Living.*Featuring: An Ambiance Of Unequal Charm. Magnificent Outdoor Living Area W/Panoramic Vistas. Indoor Cabana Pool, Jacuzzi, Bar. Complete Fitness Centre W/Sauna. Walkup Bsmt, Circular Drive W/Gates. 4 Car Garage!!",
+    "Over 10,000 Sf Of Luxurious Detail & Craftsmanship! A Palacial Estate Of Remarkable Quality!! 10Ft Ceilings. Gorgeous Cathedral Grand Foyer*Skylights*Custom Wood/Iron Railings*Wet Bars*Gas F/Ps*Custom Gourmet Kitchen"
   ],
 
   zoom: 16,
