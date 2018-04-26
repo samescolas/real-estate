@@ -32,11 +32,11 @@ class Gallery extends Component {
     let imageHeight = 0;
 
     if (width < 576) {
-      imageHeight = height * 0.6;
-    } else if (width < 768) {
       imageHeight = height * 0.7;
-    } else if (width < 992) {
+    } else if (width < 768) {
       imageHeight = height * 0.8;
+    } else if (width < 992) {
+      imageHeight = height * 0.85;
     } else {
       imageHeight = height;
     }

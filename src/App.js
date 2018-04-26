@@ -7,8 +7,12 @@ import Map from "./components/Map";
 import Details from "./components/Details";
 import "./App.css";
 import ReactPlayer from "react-player";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Analytics from "react-router-ga";
 
-const App = () => {
+//google analytics
+
+const Main = () => {
   return (
     <div className="App">
       <Title address={Config.address} city={Config.city} state={Config.state} />
@@ -20,7 +24,7 @@ const App = () => {
         <h2>Property Film</h2>
         {/*https://www.npmjs.com/package/react-player*/}
         <ReactPlayer
-          url="https://www.youtube.com/watch?v=JuYIOGxG87Q"
+          url="https://www.youtube.com/watch?v=SGoxGXrcl6M"
           controls
           width="100%"
           style={{
@@ -37,6 +41,18 @@ const App = () => {
         <Map center={Config.center} zoom={Config.zoom} />
       </div>
     </div>
+  );
+};
+
+const App = () => {
+  return (
+    <BrowserRouter>
+      <Analytics id="UA-85281823-2">
+        <Switch>
+          <Route path="/" component={Main} />
+        </Switch>
+      </Analytics>
+    </BrowserRouter>
   );
 };
 
