@@ -19,24 +19,10 @@ const TagList = ({
   `;
 
   const onClick = category => {
-    //console.log("CLICKED ON ", category, "!");
-    if (category === "View All Photos") {
-      /* If All is already selected */
-      if (selectedTags.includes("View All Photos")) {
-        ////console.log("Unselecting 'All'...");
-        unselectTag("View All Photos");
-        /* User selected 'All', which was not already active. */
-      } else {
-        //console.log("Selecting 'All'...");
-        selectTag("View All Photos");
-      }
-      /* If category is already selected, unselect it. */
-    } else if (selectedTags.includes(category)) {
-      //console.log("Unselecting ", category, "...");
+    if (selectedTags.includes(category)) {
       unselectTag(category);
       /* Otherwise select category. */
     } else {
-      //console.log("Selecting ", category, "...");
       selectTag(category);
     }
   };
@@ -44,15 +30,12 @@ const TagList = ({
     let active = activeTags.includes(tag);
     let selected = selectedTags.includes(tag);
 
-    if (selected && active) {
-      return "gold";
-    } else if (selected) {
+    if (selected) {
       return "green";
     } else if (active) {
       return "geekblue";
-    } else {
-      return "";
-    }
+		}
+		return "";
   };
 
   const renderTags = () => {
