@@ -11,6 +11,7 @@ class GallerySection extends Component {
   constructor(props) {
     super(props);
     this.state = {
+			bookmark: 0,
       activeImage: {
         id: 0,
         ix: 0
@@ -45,10 +46,12 @@ class GallerySection extends Component {
 
   selectTag = tag => {
     let newImgs = this.filterImages([tag]);
+		let bookmark = this.state.activeImage.ix;
     this.setState({
       selectedTags: [tag],
       activeImage: { id: newImgs[0].id, ix: 0 },
-      filteredImages: newImgs
+      filteredImages: newImgs,
+			bookmark,
     });
   };
 
@@ -62,8 +65,22 @@ class GallerySection extends Component {
     });
   };
 
+	resetFilters = () => {
+		this.setState({
+			activeImage: { id: this.props.images[this.state.bookmark].id, ix: this.state.bookmark },
+			filteredImages: this.props.images,
+			selectedTags: ['View All Photos'],
+		});
+	}
+
   onChange = (id, ix) => {
-    this.setState({ activeImage: { id, ix } });
+		let bookmark;
+		if (this.state.selectedTags[0] === 'View All Photos') {
+			bookmark = this.state.activeImage.ix;
+		} else {
+			bookmark = this.state.bookmark;
+		}
+    this.setState({ bookmark, activeImage: { id, ix } });
   };
 
   render() {
@@ -93,6 +110,8 @@ class GallerySection extends Component {
               images={this.state.filteredImages}
               onCarouselChange={this.onChange}
               activeImage={this.state.activeImage.ix}
+							tags={this.state.selectedTags}
+							resetFilters={this.resetFilters}
             />
           </Col>
           <Col xs={24} className="tagList">
