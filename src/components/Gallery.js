@@ -7,7 +7,7 @@ import "antd/lib/icon/style/css";
 class Gallery extends Component {
   constructor(props) {
     super(props);
-    this.state = { width: 0, height: 0 };
+    this.state = { width: 0, height: 0, shouldUpdate: true };
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
 
@@ -25,7 +25,7 @@ class Gallery extends Component {
   }
 
   render() {
-    const { images, onCarouselChange, activeImage } = this.props;
+    const { images, onCarouselChange, activeImage, tags, resetFilters } = this.props;
 
     let width = this.state.width;
     let height = this.state.height;
@@ -72,8 +72,21 @@ class Gallery extends Component {
       }
     `;
 
+		const beforeChange = (oldIx, newIx) => {
+			let lastImage = (activeImage === images.length - 1);
+			let filtered = tags[0] !== 'View All Photos';
+
+			if (filtered && lastImage && newIx == 0) {
+				resetFilters();
+			}
+		};
+
     const onChange = ix => {
-      onCarouselChange(images[ix].id, ix);
+			if (this.state.shouldUpdate) {
+				onCarouselChange(images[ix].id, ix);
+			} else { 
+				this.setState({ shouldUpdate: true });
+			}
     };
 
     const Image = styled.div`
@@ -119,7 +132,7 @@ class Gallery extends Component {
 */
 
     const renderCarouselItems = () => {
-      return images.map(i => (
+      return images.map((i,ix) => (
         <div key={i.id}>
           <Image
             className="carousel-image"
@@ -173,10 +186,11 @@ class Gallery extends Component {
     const renderCarouselThumbnails1 = () => {
       return (
         <ul>
-          {images.map(i => {
+          {images.map((i,ix) => {
             <div
               key={i.id}
               id={i.id}
+							data-index={ix}
               onClick={e => onChange(images.indexOf(e.target.id))}
             >
               <Thumbnail alt={i.categories[0]} src={i.path} />
@@ -199,6 +213,7 @@ class Gallery extends Component {
         <Carousel
           ref="carousel"
           initialSlide={activeImage}
+					beforeChange={beforeChange}
           afterChange={onChange}
           //autoplay
           draggable
