@@ -23,7 +23,6 @@ const Main = () => {
           name="description"
           content="Luxury and Timeless Extraordinary Elegance On ~ Nearly 1 Acre Lot!! A True Masterpiece French Inspired Palace In The Prestigious Oakbank Pond & Thornhill Country Club Neighbourhood."
         />
-        <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
 
       <Title address={Config.address} city={Config.city} state={Config.state} />
@@ -31,7 +30,7 @@ const Main = () => {
 
       <Details details={Config.details} />
 
-      <div style={{ paddingTop: "20px" }}>
+      <div style={{ paddingTop: "70px" }} id="film">
         <h2>Property Film</h2>
         {/*https://www.npmjs.com/package/react-player*/}
         <ReactPlayer

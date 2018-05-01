@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { Button } from "antd";
+import "antd/lib/button/style/css";
 
 const Title = ({ address, city, state }) => {
   const Container = styled.div`
@@ -19,11 +21,6 @@ const Title = ({ address, city, state }) => {
     z-index: 100;
     box-shadow: 0px 0px 2px #333;
   `;
-  const Address = styled.h1`
-    font-family: "Allura", sans-serif;
-    font-size: 30px;
-    margin-top: 20px;
-  `;
   const City = styled.h3`
     display: inline;
   `;
@@ -33,11 +30,14 @@ const Title = ({ address, city, state }) => {
 
   return (
     <Container>
-      <Address>{address}</Address>
-      {/*<div style={{ paddingRight: "40px" }}>
-        <City>{city}, </City>
-        <State>{state}</State>
-  </div>*/}
+      <h1>{address}</h1>
+      <div>
+        <a href="#film">
+          <Button type="primary" icon="play-circle">
+            Property Film
+          </Button>
+        </a>
+      </div>
     </Container>
   );
 };
